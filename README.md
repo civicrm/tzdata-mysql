@@ -8,7 +8,7 @@ using [mysql_tzinfo_to_sql](https://dev.mysql.com/doc/refman/8.0/en/mysql-tzinfo
 
 Download the SQL snapshots from [./sql](./sql).
 
-There are two variants to choose from: [MySQL]() and [MariaDB]().
+There are two variants to choose from: [MySQL](./sql/tzdata-mysql80-main.sql) and [MariaDB](./sql/tzdata-mariadb-main.sql).
 
 ## Updates
 
