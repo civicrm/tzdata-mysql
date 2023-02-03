@@ -15,3 +15,4 @@ fi
 ################################################################################
 
 nix-shell nix/mysql80.nix --run "./scripts/build.sh $VERSION mysql80"
+nix-shell nix/mariadb.nix --run "./scripts/build.sh $VERSION mariadb"
