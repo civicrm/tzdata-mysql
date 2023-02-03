@@ -2,12 +2,11 @@
 set -e
 
 ################################################################################
-BASE_DIR="$PWD"
 VERSION="$1"
 
 if [ -z "$VERSION" ]; then
-  echo "usage: ./scripts/build.sh <VERSION>" 
-  echo "example: ./scripts/build.sh 2022g"
+  echo "usage: ./scripts/build-all.sh <VERSION>" 
+  echo "example: ./scripts/build-all.sh 2022g"
   echo
   exit 1
 fi
