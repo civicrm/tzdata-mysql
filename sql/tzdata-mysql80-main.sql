@@ -575,6 +575,12 @@ INSERT INTO time_zone_transition_type (Time_zone_id, Transition_type_id, Offset,
 ;
 INSERT INTO time_zone (Use_leap_seconds) VALUES ('N');
 SET @time_zone_id= LAST_INSERT_ID();
+INSERT INTO time_zone_name (Name, Time_zone_id) VALUES ('America/Ciudad_Juarez', @time_zone_id);
+INSERT INTO time_zone_transition_type (Time_zone_id, Transition_type_id, Offset, Is_DST, Abbreviation) VALUES
+ (@time_zone_id, 0, 0, 0, '')
+;
+INSERT INTO time_zone (Use_leap_seconds) VALUES ('N');
+SET @time_zone_id= LAST_INSERT_ID();
 INSERT INTO time_zone_name (Name, Time_zone_id) VALUES ('America/Coral_Harbour', @time_zone_id);
 INSERT INTO time_zone_transition_type (Time_zone_id, Transition_type_id, Offset, Is_DST, Abbreviation) VALUES
  (@time_zone_id, 0, 0, 0, '')
