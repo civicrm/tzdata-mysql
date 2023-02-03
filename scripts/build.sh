@@ -35,15 +35,15 @@ fi
 cd "$TZDB_DIR"
 make
 
-#for TYPE in $TYPES ; do
-#  TGT="${ZONES_DIR}/${TYPE}-${VERSION}"
-#  echo "Build zone dir ($TGT)"
-#  if [ -d "$TGT" ]; then
-#    rm -rf "$TGT"
-#  fi
-#  mkdir -p "$TGT"
-#  ./zic -d "$TGT" "${TYPE}.zi"
-#done
+for TYPE in $TYPES ; do
+  TGT="${ZONES_DIR}/${TYPE}-${VERSION}"
+  echo "Build zone dir ($TGT)"
+  if [ -d "$TGT" ]; then
+    rm -rf "$TGT"
+  fi
+  mkdir -p "$TGT"
+  ./zic -d "$TGT" "${TYPE}.zi"
+done
 
 ################################################################################
 ## Build the "sql/" folder
