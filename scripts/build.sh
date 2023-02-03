@@ -18,7 +18,8 @@ TZDB_URL="https://data.iana.org/time-zones/releases/tzdb-$VERSION.tar.lz"
 TZDB_DIR="tzdb-$VERSION"
 ZONES_DIR="$BASE_DIR/zones"
 SQL_DIR="$BASE_DIR/sql"
-TYPES="main vanguard rearguard"
+TYPES="main"
+#TYPES="main vanguard rearguard" # There doesn't seem to be a difference in the resulting MySQL data...
 
 ################################################################################
 ## Build the "zones/" folder
@@ -51,7 +52,7 @@ done
 mkdir -p "$SQL_DIR"
 for TYPE in $TYPES ; do
   SRC="${ZONES_DIR}/${TYPE}-${VERSION}"
-  TGT="$SQL_DIR/$PREFIX-$TYPE.sql"
+  TGT="$SQL_DIR/tzdata-$PREFIX-$TYPE.sql"
   echo "Build SQL ($SRC => $TGT)"
   mysql_tzinfo_to_sql "$SRC" > "$TGT"
 done
